@@ -8,11 +8,8 @@ video {
   width: auto;
   height: auto;
   z-index: -100;
-  -webkit-filter: grayscale(1) brightness(0.50) contrast(1.05);
-  filter: grayscale(1) brightness(0.50) contrast(1.05);
-  // -webkit-filter: sepia(1) hue-rotate(200deg);
-  // filter: sepia(1) hue-rotate(200deg);
+  @include filter (grayscale(1) brightness(0.50) contrast(1.05));
   background-size: cover;
-  transition: 1s opacity;
   opacity: 1;
+
 }

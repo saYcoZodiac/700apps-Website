@@ -1,6 +1,3 @@
-// Here's where we define some default constants
-@import "partials/base";
-
 // Then we'll import the compass extension
 @import "h5bp";
 
@@ -21,6 +18,8 @@
 @include h5bp-helpers;
 
 // Media should come last
+@import "partials/base";
 @import "partials/media";
 @import "partials/video-background";
 @import "partials/headlines";
+@import "partials/menu";
