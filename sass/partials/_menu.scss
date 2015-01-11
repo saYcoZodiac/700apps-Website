@@ -22,10 +22,9 @@
 		& nav {
 			text-align: center;
 			position: relative;
-			top: 50%;
+			top: 20%;
 			height: 60%;
-			font-size: 54px;
-			@include translateY(-50%);
+			font-size: 74px;
 		}
 
 		& ul {
@@ -37,15 +36,12 @@
 			position: relative;
 			li {
 				display: block;
-				height: 20%;
-				height: calc(100% / 5);
-				min-height: 54px;
 				@media screen and (max-height: 30.5em) {
 					min-height: 34px;
 				}
 			}
 				a {
-					font-weight: 300;
+					font-weight: 500;
 					display: block;
 					color: $lava-color;
 					@include transition-property(color);
@@ -70,6 +66,7 @@
 	@include transition (opacity 0.5s);
 	@include transition (visibility 0s 0.1s);
 	&.open {
+		height: 100%;
 		opacity: 1;
 		visibility: visible;
 		@include transition-property(opacity);
@@ -96,7 +93,7 @@
 }
 .toggle span {
 	  display: block;
-	  background: $lava-color;
+	  background: white;
 	  width: 60px;
 	  height: 2px;
 
@@ -113,4 +110,28 @@
   cursor: pointer;
   top: 45px;
   right: 30px;
+}
+
+// logo
+
+.nav-in h1 {
+	width: 150px;
+	height: 69px;
+	float: left;
+	text-indent: -9999px;
+		& a {
+		float: left;
+		padding: 0 !important;
+		margin: 0 !important;
+		width: 150px;
+		height: 69px;
+		background-image: url("../images/common1.png");
+		background-position: center 0;
+		background-repeat: no-repeat;
+		background-position: 0 -120px !important;
+			&:hover {
+				width: 300px !important;
+				@include transition (width 1s ease);
+			}
+		}
 }

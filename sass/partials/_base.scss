@@ -23,5 +23,7 @@ html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-
+body {
+	width: 100%;
+	position: absolute;
+}

@@ -361,6 +361,11 @@ html * {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  width: 100%;
+  position: absolute;
+}
+
 @media only screen and (min-width: 480px) {
   /* Style adjustments for viewports 480px and over go here */
 }
@@ -474,7 +479,6 @@ video {
 }
 
 .cd-intro {
-  width: 90%;
   text-transform: uppercase;
   text-align: center;
   margin: 4em auto;
@@ -647,13 +651,9 @@ video {
 .overlay nav {
   text-align: center;
   position: relative;
-  top: 50%;
+  top: 20%;
   height: 60%;
-  font-size: 54px;
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+  font-size: 74px;
 }
 .overlay ul {
   list-style: none;
@@ -665,9 +665,6 @@ video {
 }
 .overlay ul li {
   display: block;
-  height: 20%;
-  height: calc(100% / 5);
-  min-height: 54px;
 }
 @media screen and (max-height: 30.5em) {
   .overlay ul li {
@@ -675,7 +672,7 @@ video {
   }
 }
 .overlay ul a {
-  font-weight: 300;
+  font-weight: 500;
   display: block;
   color: #C40E22;
   -moz-transition-property: color;
@@ -714,6 +711,7 @@ video {
   transition: visibility 0s 0.1s;
 }
 .overlay-hugeinc.open {
+  height: 100%;
   opacity: 1;
   visibility: visible;
   -moz-transition-property: opacity;
@@ -770,7 +768,7 @@ video {
 
 .toggle span {
   display: block;
-  background: #C40E22;
+  background: white;
   width: 60px;
   height: 2px;
 }
@@ -789,4 +787,29 @@ video {
   cursor: pointer;
   top: 45px;
   right: 30px;
+}
+
+.nav-in h1 {
+  width: 150px;
+  height: 69px;
+  float: left;
+  text-indent: -9999px;
+}
+.nav-in h1 a {
+  float: left;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 150px;
+  height: 69px;
+  background-image: url("../images/common1.png");
+  background-position: center 0;
+  background-repeat: no-repeat;
+  background-position: 0 -120px !important;
+}
+.nav-in h1 a:hover {
+  width: 300px !important;
+  -moz-transition: width 1s ease;
+  -o-transition: width 1s ease;
+  -webkit-transition: width 1s ease;
+  transition: width 1s ease;
 }
