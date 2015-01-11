@@ -51,6 +51,7 @@
 					text-align: center;
 					&:hover , &:focus{
 						color: $spiro-color;
+						@include transition (all 0.6s ease);
 					}
 				}
 			}
@@ -59,7 +60,28 @@
 				font-size: 34px;
 			}
 		}
-
+nav a {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+nav a:after {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  height: 3px;
+  bottom: 0px;
+  content: "";
+  background-color: $spiro-color;
+  // transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  @include transition (0.6s (cubic-bezier(0.68, -0.55, 0.265, 1.55)));
+  @include transform (translate3d(0, 0, 0));
+}
+nav a:hover:after, .active a:after {
+  left: 10px;
+  right: 10px;
+}
 .overlay-hugeinc {
 	opacity: 0;
 	visibility: hidden;
@@ -92,10 +114,10 @@
 	@include transform (rotateX(-35deg));
 }
 .toggle span {
-	  display: block;
-	  background: white;
-	  width: 60px;
-	  height: 2px;
+  display: block;
+  background: white;
+  width: 60px;
+  height: 2px;
 
 }
 .toggle  span:nth-child(1) {
@@ -134,4 +156,39 @@
 				@include transition (width 1s ease);
 			}
 		}
+}
+
+
+.mouse {
+  width: 22px;
+  position: absolute;
+  height: 42px;
+  @include border-radius (15px);
+  border: 2px solid $spiro-color;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -12px;
+  cursor: pointer;
+}
+
+.scroll {
+  display: block;
+  margin: 6px auto;
+  width: 3px;
+  height: 3px;
+  @include border-radius(4px);
+  background: $spiro-color;
+  @include animation-duration (1s);
+  @include animation-iteration-count (infinite);
+  @include animation-name (scroll);
+}
+
+@include keyframes(scroll) {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    @include transform (translateY(20px));
+  }
 }

@@ -364,6 +364,7 @@ html * {
 body {
   width: 100%;
   position: absolute;
+  height: 100%;
 }
 
 @media only screen and (min-width: 480px) {
@@ -689,12 +690,46 @@ video {
 }
 .overlay ul a:hover, .overlay ul a:focus {
   color: #1DBFEB;
+  -moz-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
 }
 @media screen and (max-height: 30.5em) {
   .overlay {
     height: 70%;
     font-size: 34px;
   }
+}
+
+nav a {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+
+nav a:after {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  height: 3px;
+  bottom: 0px;
+  content: "";
+  background-color: #1DBFEB;
+  -moz-transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.6s;
+  -o-transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.6s;
+  -webkit-transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.6s;
+  transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.6s;
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+nav a:hover:after, .active a:after {
+  left: 10px;
+  right: 10px;
 }
 
 .overlay-hugeinc {
@@ -812,4 +847,71 @@ video {
   -o-transition: width 1s ease;
   -webkit-transition: width 1s ease;
   transition: width 1s ease;
+}
+
+.mouse {
+  width: 22px;
+  position: absolute;
+  height: 42px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  border: 2px solid #1DBFEB;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -12px;
+  cursor: pointer;
+}
+
+.scroll {
+  display: block;
+  margin: 6px auto;
+  width: 3px;
+  height: 3px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background: #1DBFEB;
+  -moz-animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -moz-animation-name: scroll;
+  -webkit-animation-name: scroll;
+  animation-name: scroll;
+}
+
+@-moz-keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+@-webkit-keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+@keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
 }
