@@ -652,7 +652,7 @@ video {
 .overlay nav {
   text-align: center;
   position: relative;
-  top: 20%;
+  top: 10%;
   height: 60%;
   font-size: 74px;
 }
@@ -739,11 +739,10 @@ nav a:hover:after, .active a:after {
   -o-transition: opacity 0.5s;
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
-  -moz-transition: visibility 0s 0.1s;
-  -o-transition: visibility 0s 0.1s;
-  -webkit-transition: visibility 0s;
-  -webkit-transition-delay: 0.1s;
-  transition: visibility 0s 0.1s;
+  -moz-transition: visibility 0.5s;
+  -o-transition: visibility 0.5s;
+  -webkit-transition: visibility 0.5s;
+  transition: visibility 0.5s;
 }
 .overlay-hugeinc.open {
   height: 100%;
@@ -753,10 +752,10 @@ nav a:hover:after, .active a:after {
   -o-transition-property: opacity;
   -webkit-transition-property: opacity;
   transition-property: opacity;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
+  -moz-transition-duration: 0.7s;
+  -o-transition-duration: 0.7s;
+  -webkit-transition-duration: 0.7s;
+  transition-duration: 0.7s;
 }
 .overlay-hugeinc.open nav ul {
   opacity: 1;
@@ -840,13 +839,13 @@ nav a:hover:after, .active a:after {
   background-position: center 0;
   background-repeat: no-repeat;
   background-position: 0 -120px !important;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }
 .nav-in h1 a:hover {
   width: 300px !important;
-  -moz-transition: width 1s ease;
-  -o-transition: width 1s ease;
-  -webkit-transition: width 1s ease;
-  transition: width 1s ease;
 }
 
 .mouse {
@@ -856,7 +855,7 @@ nav a:hover:after, .active a:after {
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
   border-radius: 15px;
-  border: 2px solid #1DBFEB;
+  border: 2px solid #C40E22;
   bottom: 10px;
   left: 50%;
   margin-left: -12px;

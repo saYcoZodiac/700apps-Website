@@ -22,7 +22,7 @@
 		& nav {
 			text-align: center;
 			position: relative;
-			top: 20%;
+			top: 10%;
 			height: 60%;
 			font-size: 74px;
 		}
@@ -86,13 +86,13 @@ nav a:hover:after, .active a:after {
 	opacity: 0;
 	visibility: hidden;
 	@include transition (opacity 0.5s);
-	@include transition (visibility 0s 0.1s);
+	@include transition (visibility 0.5s);
 	&.open {
 		height: 100%;
 		opacity: 1;
 		visibility: visible;
 		@include transition-property(opacity);
-  		@include transition-duration(0.5s);
+  		@include transition-duration(0.7s);
 		& nav ul {
 			opacity: 1;
 			@include transform(rotateX(0deg))
@@ -151,9 +151,9 @@ nav a:hover:after, .active a:after {
 		background-position: center 0;
 		background-repeat: no-repeat;
 		background-position: 0 -120px !important;
+		@include transition (all 1s ease);
 			&:hover {
 				width: 300px !important;
-				@include transition (width 1s ease);
 			}
 		}
 }
@@ -164,7 +164,7 @@ nav a:hover:after, .active a:after {
   position: absolute;
   height: 42px;
   @include border-radius (15px);
-  border: 2px solid $spiro-color;
+  border: 2px solid $lava-color;
   bottom: 10px;
   left: 50%;
   margin-left: -12px;
