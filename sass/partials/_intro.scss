@@ -1,0 +1,240 @@
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1200;
+        & .loader-section {
+            position: fixed;
+            left: 0;
+            width: 100%;
+            height: 51%;
+            background: lighten(black, 10%);
+            z-index: 1200;
+                &.left {
+                top: 0;
+                }
+                &.right {
+                    bottom: 0;
+                }
+        }
+}
+.loader {
+    display: block;
+    position: relative;
+    // left: 50%;
+    top: 50%;
+    z-index: 1300;
+    width: 200px;
+    // height: 200px;
+    // margin: 75px 0 75px 0;
+    margin: 0 auto;
+    @include border-radius(50%);
+}
+@include keyframes(spin) {
+    0%   {
+        @include transform (rotate(0deg));
+    }
+    100% {
+        @include transform (rotate(360deg));
+    }
+}
+.loaded .loader-wrapper .loader-section.left {
+    @include transform (translatey(-200%) rotate(-20deg) translatex(-6%));
+    @include transition (all 1s ease);
+    @include transition (translateX 2s);
+}
+.loaded .loader-wrapper .loader-section.right {
+    @include transform (translatey(200%) rotate(20deg) translatex(-6%));
+    @include transition (all 1s ease);
+    @include transition (translateX 2s);
+}
+.loaded .loader {
+    opacity: 0;
+}
+.loaded .loader-wrapper {
+    visibility: hidden;
+}
+.loaded .loader {
+    opacity: 0;
+    @include transition (all 0.3s ease-out);
+}
+.loaded .loader-wrapper .loader-section.right,
+.loaded .loader-wrapper .loader-section.left {
+    @include transition (all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000));
+}
+.loaded .loader-wrapper {
+    @include transform (translateX(-100%));
+    @include transition (all 0.3s 1s ease-out);
+}
+
+
+
+#loadercontainer {
+  display: inline-block;
+  width: 180px;
+  height: 30px;
+  margin: 0 auto;
+}
+.dots {
+  float: left;
+  width: 18px;
+  height: 30px;
+  position: relative;
+      &:before, &:after {
+        content: "";
+        display: block;
+        @include border-radius(50px);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        @include transform (translateX(-50%) translateY(-50%));
+      }
+      &:before {
+        height: 4px;
+        width: 4px;
+        background-color: $spiro-color;
+        z-index: -1;
+      }
+      &:after {
+        height: 9px;
+        width: 9px;
+        background-color: $lava-color;
+        z-index: 1;
+      }
+      @for $i from 0 through 9 {
+        &:nth-child(#{$i+1}) {
+          &:before {
+            @include animation (waveBefore 0.9s #{$i*0.09}s linear infinite);
+          }
+          &:after {
+            @include animation (waveAfter 0.9s #{$i*0.09}s linear infinite);
+          }
+        }
+      }
+}
+
+@include keyframes (waveBefore) {
+  0% {
+    height: 4px;
+    width: 4px;
+    top: 50%;
+    z-index: -1;
+  }
+  10% {
+    height: 5px;
+    width: 5px;
+    z-index: -1;
+  }
+  20% {
+    height: 6px;
+    width: 6px;
+    top: 100%;
+    z-index: 1;
+  }
+  30% {
+    height: 7px;
+    width: 7px;
+    z-index: 1;
+  }
+  40% {
+    height: 8px;
+    width: 8px;
+    z-index: 1;
+  }
+  50% {
+    height: 9px;
+    width: 9px;
+    z-index: 1;
+  }
+  60% {
+    height: 8px;
+    width: 8px;
+    z-index: 1;
+  }
+  70% {
+    height: 7px;
+    width: 7px;
+    z-index: 1;
+  }
+  80% { 
+    height: 6px;
+    width: 6px;
+    top: 0;
+    z-index: -1;
+  }
+  90% { 
+    height: 5px;
+    width: 5px;
+    z-index: -1;
+  }
+  100% {
+    height: 4px;
+    width: 4px;
+    top: 50%;
+    z-index: -1;
+  }
+}
+
+@include keyframes (waveAfter) {
+  0% {
+    height: 9px;
+    width: 9px;
+    top: 50%;
+    z-index: 1;
+  }
+  10% {
+    height: 8px;
+    width: 8px;
+    z-index: 1;
+  }
+  20% {
+    height: 7px;
+    width: 7px;
+    top: 0;
+    z-index: -1;
+  }
+  30% {
+    height: 6px;
+    width: 6px;
+    z-index: -1;
+  }
+  40% {
+    height: 5px;
+    width: 5px;
+    z-index: -1;
+  }
+  50% {
+    height: 4px;
+    width: 4px;
+    z-index: -1;
+  }
+  60% {
+    height: 5px;
+    width: 5px;
+    z-index: -1;
+  }
+  70% {
+    height: 6px;
+    width: 6px;
+    z-index: -1;
+  }
+  80% { 
+    height: 7px;
+    width: 7px;
+    top: 100%;
+    z-index: 1;
+  }
+  90% { 
+    height: 8px;
+    width: 8px;
+    z-index: 1;
+  }
+  100% {
+    height: 9px;
+    width: 9px;
+    top: 50%;
+    z-index: 1;
+  }
+}

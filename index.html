@@ -8,7 +8,7 @@
   <head>
     <meta charset='utf-8' />
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
-    <title>700apps - Leading Innovation</title>
+    <title>700apps - Leading Innovators</title>
     <meta content='' name='700apps is a software house based in Tanta, Egypt.' />
     <meta content='' name='Muhammed Sarhan' />
     <meta content='width=device-width, initial-scale=1.0' name='viewport' />
@@ -17,49 +17,78 @@
 	 <!--[if IE]>
 	 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	 <![endif]-->
+	 
   </head>
 
   <body>
-	<div class="nav-in">
-		<h1><a style="overflow: hidden; width: 150px;" href="index.html" title="700apps - Leading Innovation">700apps</a></h1>
-		<div class="toggle" id="trigger-overlay">
-		  <span></span>
-		  <span></span>
-		  <span></span>
-		</div>	<!-- toggle -->
-    </div>	<!-- nav-in -->
-	<section class="cd-intro">
-		<h2 class="cd-headline slide">
-		  <span>We</span>
-		  <span class="cd-words-wrapper">
-		    <b class="is-visible">think</b>
-		    <b>create</b>
-		    <b>innovate</b>
-		    <b>deliver</b>
-		  </span>
-		</h2>
-	</section>	<!-- cd-intro -->
-   	<video autoplay loop poster="polina.jpg" id="bgvid" class="grayscale">
-		<source src="video.webm" type="video/webm">
-		<source src="video.mp4" type="video/mp4">
-   	</video>
-	<div class="mouse animated fadeInUp">
-		<div class="scroll">
-	</div>
-	<div class="overlay overlay-hugeinc">
-		<button type="button" class="overlay-close">Close</button>
-		<nav>
-			<ul>
-				<li><a href="#" class="active">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Clients</a></li>
-				<li><a href="#">Careers</a></li>
-				<li><a href="#">Services</a></li>
-				<li><a href="#">Projects</a></li>
-				<li><a href="#">Contact us</a></li>
-			</ul>
-		</nav>
-	</div>	<!-- overlay overlay-hugeinc -->
+	  	<div class="loader-wrapper">
+	  		<div class="loader">
+	  			<div id='loadercontainer'>
+				  <div class='dots'></div>
+				  <div class='dots'></div>
+				  <div class='dots'></div>
+				  <div class='dots'></div>
+				  <div class='dots'></div>
+				  <div class='dots'></div>
+				  <div class='dots'></div>
+				  <div class='dots'></div>
+				  <div class='dots'></div>
+				  <div class='dots'></div>
+				</div>
+			</div>
+	  		<div class="loader-section left"></div>
+	  		<div class="loader-section right"></div>
+    	</div>
+		<video autoplay loop poster="polina.jpg" id="bgvid" class="grayscale">
+			<source src="video.webm" type="video/webm">
+			<source src="video.mp4" type="video/mp4">
+		</video>
+		<section>
+			<div class="nav-in">
+				<h1 class="logo"><a href="index.html" title="700apps - Leading Innovators">700apps</a></h1>
+				<div class="toggle" id="trigger-overlay">
+				  <span></span>
+				  <span></span>
+				  <span></span>
+				</div>	<!-- toggle -->
+		    </div>	<!-- nav-in -->
+	    	<div class="clearfix"></div>
+			<div class="cd-intro">
+				<h2 class="cd-headline slide">
+				  <span>We</span>
+				  <span class="cd-words-wrapper">
+				    <b class="is-visible">think</b>
+				    <b>create</b>
+				    <b>innovate</b>
+				    <b>deliver</b>
+				  </span>
+				</h2>
+			</div>	<!-- cd-intro -->
+			<div class="mouse animated fadeInUp" onClick="document.getElementById('about').scrollIntoView();">
+				<div class="scroll">
+			</div>
+		</section>
+		<div class="container">
+			<section id="about" data-index="1">
+				<h1>another section</h1>
+			</section>
+		</div>	<!-- container -->
+		
+		<div class="overlay overlay-hugeinc">
+			<button type="button" class="overlay-close">Close</button>
+			<nav>
+				<ul>
+					<li><a href="." class="active">Home</a></li>
+					<li><a href=".">About</a></li>
+					<li><a href=".">Clients</a></li>
+					<li><a href=".">Careers</a></li>
+					<li><a href=".">Services</a></li>
+					<li><a href=".">Projects</a></li>
+					<li><a href=".">Contact us</a></li>
+				</ul>
+			</nav>
+		</div>	<!-- overlay overlay-hugeinc -->
+
     <script src='javascripts/jquery-1.6.2.min.js'></script>
     <script src='javascripts/plugins.js'></script>
     <script src='javascripts/script.js'></script>
@@ -70,5 +99,12 @@
       window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})});
     </script>
     <![endif]-->
+	<script>
+		$(window).load(function() {
+			setTimeout(function(){
+			$('body').addClass('loaded');
+			}, 5000);
+		});
+	</script>
   </body>
 </html>

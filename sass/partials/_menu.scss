@@ -4,7 +4,7 @@
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: black;
+	background: lighten(black, 10%);
 		& .overlay-close {
 			width: 80px;
 			height: 80px;
@@ -136,8 +136,9 @@ nav a:hover:after, .active a:after {
 
 // logo
 
-.nav-in h1 {
-	width: 150px;
+h1.logo {
+	margin-top: 15px;
+	width: 230px;
 	height: 69px;
 	float: left;
 	text-indent: -9999px;
@@ -145,16 +146,12 @@ nav a:hover:after, .active a:after {
 		float: left;
 		padding: 0 !important;
 		margin: 0 !important;
-		width: 150px;
+		width: 230px;
 		height: 69px;
 		background-image: url("../images/common1.png");
 		background-position: center 0;
 		background-repeat: no-repeat;
 		background-position: 0 -120px !important;
-		@include transition (all 1s ease);
-			&:hover {
-				width: 300px !important;
-			}
 		}
 }
 

@@ -1,10 +1,9 @@
-
 video { 
-  position: fixed;
+  position: absolute;
   right: 0;
   bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
+  min-width: 100% !important;
+  min-height: 100% !important;
   width: auto;
   height: auto;
   z-index: -100;
@@ -13,6 +12,7 @@ video {
   opacity: 1;
 
 }
+
 // .grayscale {
 //   filter: grayscale(100%);
 //   -webkit-filter: grayscale(100%);

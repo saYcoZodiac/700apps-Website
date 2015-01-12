@@ -9,7 +9,17 @@ html * {
   -moz-osx-font-smoothing: grayscale;
 }
 body {
-	width: 100%;
+	@extend section;
 	position: absolute;
+}
+h1 {
+	padding: 0;
+	margin: 0;
+}
+section {
 	height: 100%;
+	width: 100%;
+}
+.container {
+	@extend section;
 }
