@@ -465,6 +465,72 @@ video {
   opacity: 1;
 }
 
+.mouse {
+  width: 22px;
+  position: absolute;
+  height: 42px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  border: 2px solid #C40E22;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -12px;
+  outline: none !important;
+}
+
+.scroll {
+  display: block;
+  margin: 6px auto;
+  width: 3px;
+  height: 3px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background: #1DBFEB;
+  -moz-animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -moz-animation-name: scroll;
+  -webkit-animation-name: scroll;
+  animation-name: scroll;
+}
+
+@-moz-keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+@-webkit-keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+@keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
 .cd-headline.slide span {
   display: inline-block;
   padding: .2em 0;
@@ -856,72 +922,6 @@ h1.logo a {
   background-position: 0 -120px !important;
 }
 
-.mouse {
-  width: 22px;
-  position: absolute;
-  height: 42px;
-  -moz-border-radius: 15px;
-  -webkit-border-radius: 15px;
-  border-radius: 15px;
-  border: 2px solid #C40E22;
-  bottom: 10px;
-  left: 50%;
-  margin-left: -12px;
-  outline: none;
-}
-
-.scroll {
-  display: block;
-  margin: 6px auto;
-  width: 3px;
-  height: 3px;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  background: #1DBFEB;
-  -moz-animation-duration: 1s;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -moz-animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -moz-animation-name: scroll;
-  -webkit-animation-name: scroll;
-  animation-name: scroll;
-}
-
-@-moz-keyframes scroll {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    -moz-transform: translateY(20px);
-    transform: translateY(20px);
-  }
-}
-@-webkit-keyframes scroll {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: translateY(20px);
-    transform: translateY(20px);
-  }
-}
-@keyframes scroll {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    -moz-transform: translateY(20px);
-    -ms-transform: translateY(20px);
-    -webkit-transform: translateY(20px);
-    transform: translateY(20px);
-  }
-}
 section, body, .container {
   text-align: center;
   color: white;
