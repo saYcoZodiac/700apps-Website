@@ -43,9 +43,9 @@
 			<source src="assets/video.webm" type="video/webm">
 			<source src="assets/video.mp4" type="video/mp4">
 		</video>
-		<section>
+		<section id="top">
 			<div class="nav-in">
-				<h1 class="logo"><a href="index.html" title="700apps - Leading Innovators">700apps</a></h1>
+				<h1 class="logo"><a href="#two" title="700apps - Leading Innovators">700apps</a></h1>
 				<div class="toggle" id="trigger-overlay">
 				  <span></span>
 				  <span></span>
@@ -63,13 +63,11 @@
 				    <b>deliver</b>
 				  </span>
 				</h2>
-			</div>	<!-- cd-intro -->
-			<div class="mouse animated fadeInUp" onClick="document.getElementById('about').scrollIntoView();">
-				<div class="scroll">
-			</div>
+			</div>	<!-- cd-intro -->				
+			<a href="#two" class="mouse animated fadeInUp"><div class="scroll"></div></a>
 		</section>
-		<div class="container">
-			<section id="about" data-index="1">
+		<div class="container" id="two">
+			<section >
 				<h1>another section</h1>
 			</section>
 		</div>	<!-- container -->
@@ -103,8 +101,25 @@
 		$(window).load(function() {
 			setTimeout(function(){
 			$('body').addClass('loaded');
-			}, 5000);
+			}, 1000);
 		});
+	</script>
+		<script>
+	$(function() {
+	  $('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	  });
+	});
 	</script>
   </body>
 </html>

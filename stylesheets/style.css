@@ -867,7 +867,7 @@ h1.logo a {
   bottom: 10px;
   left: 50%;
   margin-left: -12px;
-  cursor: pointer;
+  outline: none;
 }
 
 .scroll {
