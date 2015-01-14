@@ -1,0 +1,113 @@
+p {
+  font-family: "Lato", sans-serif;
+  color: #6b2b03;
+}
+
+.btn-animate {
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+  color: #FFF;
+  position: relative;
+  display: inline-block;
+  margin: 20px auto;
+  width: 200px;
+  height: 50px;
+  overflow: hidden;
+    & > svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 50px;
+      stroke-width: 8px;
+      stroke: $lava-color;
+      stroke-linecap: round;
+      fill: transparent;
+    }
+    & > span {
+      color: $spiro-color;
+      width: 200px;
+      height: 50px;
+      display: inline-block;
+      text-align: center;
+      font-size: 20px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      line-height: 2.3;
+      @include transition (all .2s ease);
+        &:after {
+          position: absolute;
+          content: 'CLICK HERE!';
+          color: $lava-color !important;
+          top: 0;
+          left: -100%;
+          width: 200px;
+          height: 50px;
+          color: #0F0F0F;
+          @include transition (all .2s ease);
+        }
+        &:before {
+          position: absolute;
+          content: '';
+          height: 50px;
+          z-index: 0;
+          width: 50px;
+          background-color: $spiro-color;
+          @include border-radius (50%);
+          top: 0;
+          left: -63%;
+          @include transition (all .4s ease);
+          @include transform (scale(0));
+          opacity: 0;
+        }
+    }
+    &:hover > svg {
+      @include animation (1s pencil linear forwards);
+    }
+    &:hover > span {
+      left: 100%;
+    }
+    &:hover > span:after {
+      left: -100%;
+    }
+}
+
+
+
+.ripple-effect {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 1px solid $spiro-color;
+  @include animation (ripple-animation 2.5s);
+}
+@include keyframes (pencil) {
+  0% {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 700;
+    stroke-width: 8px;
+  }
+  75% {
+    stroke-dasharray: 900;
+    stroke-dashoffset: 400;
+    stroke-width: 1px;
+    fill: transparent;
+  }
+  100% {
+    stroke-dasharray: 900;
+    stroke-dashoffset: 400;
+    stroke-width: 1px;
+    fill: #191919;
+  }
+}
+@include keyframes (ripple-animation) {
+  from {
+    @include transform (scale(0.5));
+    opacity: 1;
+  }
+  to {
+    @include transform (scale(30));
+    opacity: 0;
+  }
+}
