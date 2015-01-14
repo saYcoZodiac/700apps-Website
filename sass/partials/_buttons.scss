@@ -24,7 +24,7 @@ p {
       stroke-linecap: round;
       fill: transparent;
     }
-    & > span {
+    & > button {
       color: $spiro-color;
       width: 200px;
       height: 50px;
@@ -35,18 +35,10 @@ p {
       left: 0;
       top: 0;
       line-height: 2.3;
+      background-color: transparent;
+      border: none;
       @include transition (all .2s ease);
-        &:after {
-          position: absolute;
-          content: 'CLICK HERE!';
-          color: $lava-color !important;
-          top: 0;
-          left: -100%;
-          width: 200px;
-          height: 50px;
-          color: #0F0F0F;
-          @include transition (all .2s ease);
-        }
+
         &:before {
           position: absolute;
           content: '';
@@ -65,23 +57,8 @@ p {
     &:hover > svg {
       @include animation (1s pencil linear forwards);
     }
-    &:hover > span {
-      left: 100%;
-    }
-    &:hover > span:after {
-      left: -100%;
-    }
 }
 
-
-
-.ripple-effect {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border: 1px solid $spiro-color;
-  @include animation (ripple-animation 2.5s);
-}
 @include keyframes (pencil) {
   0% {
     stroke-dasharray: 300;
@@ -91,23 +68,13 @@ p {
   75% {
     stroke-dasharray: 900;
     stroke-dashoffset: 400;
-    stroke-width: 1px;
+    stroke-width: 3px;
     fill: transparent;
   }
   100% {
     stroke-dasharray: 900;
     stroke-dashoffset: 400;
-    stroke-width: 1px;
+    stroke-width: 3px;
     fill: #191919;
-  }
-}
-@include keyframes (ripple-animation) {
-  from {
-    @include transform (scale(0.5));
-    opacity: 1;
-  }
-  to {
-    @include transform (scale(30));
-    opacity: 0;
   }
 }
