@@ -19,7 +19,25 @@ h1 {
 section {
 	height: 100%;
 	width: 100%;
+	
+	@media only screen and (max-width: 768px) {
+  	/* Style adjustments for viewports 768px and over go here */
+  	height: auto;
+	
+	}
+}
+video {
+	@media only screen and (max-width: 768px) {
+	  	/* Style adjustments for viewports 768px and over go here */
+	  	height: 100%;
+		
+		}	
 }
 .container {
-	@extend section;
+	height: 100%;
+	width: 100%;
+}
+p {
+	font-family: 'Lora', serif;
+	color: white;
 }
