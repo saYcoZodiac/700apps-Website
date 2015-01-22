@@ -1,3 +1,5 @@
+
+
 // Then we'll import the compass extension
 @import "h5bp";
 
@@ -15,7 +17,6 @@
 @import "partials/page";
 
 // Helpers classes should come second-to-last
-@include h5bp-helpers;
 
 // Media should come last
 @import "partials/base";
@@ -32,3 +33,7 @@
 @import "partials/counters";
 @import "partials/carousel";
 @import "partials/slider";
+@import "partials/footer";
+@import "partials/form";
+@import "partials/testimonial";
+

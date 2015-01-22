@@ -26,4 +26,4 @@ output_style = :expanded # by Compass.app
 relative_assets = true # by Compass.app 
 line_comments = true # by Compass.app 
 sass_options = {:debug_info=>false} # by Compass.app 
-sourcemap = true # by Compass.app 
+sourcemap = false # by Compass.app 

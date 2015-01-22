@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="en" class="no-js ie6 oldie"> <![endif]-->
+<!--[if IE 7]><html lang="en" class="no-js ie7 oldie"> <![endif]-->
+<!--[if IE 8]><html lang="en" class="no-js ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class='fsvs no-js' lang='en'>
+  <!--<![endif]-->
+  <head>
+    <meta charset='utf-8' />
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
+    <title>700apps - Leading Innovators</title>
+    <meta content='' name='700apps is a software house based in Tanta, Egypt.' />
+    <meta content='' name='Muhammed Sarhan' />
+    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+    <link href='stylesheets/reset.css' rel='stylesheet' />
+    <link href='stylesheets/style.css' rel='stylesheet' />
+    <link href='stylesheets/pe-icon-7-stroke.css' rel='stylesheet' />
+    <script src="javascripts/jquery-1.11.0.min.js"></script>
+    <script src='javascripts/modernizr-2.0.6.min.js'></script>
+    <script src="javascripts/bundle.js"></script>
+	 <!--[if IE]>
+	 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	 <![endif]-->
+	 <!-- <link href="http://fonts.googleapis.com/css?family=Lora:400" rel="stylesheet" type="text/css"> -->
+
+
+  <style>
+  .toggle {
+  	z-index: 2;
+  }
+	@font-face	{
+		font-family:"bauer-bodoni-std-roman";
+		src:url("fonts-downloaded/BauerBodoniStd-Roman.eot");
+		src:url("fonts-downloaded/BauerBodoniStd-Roman.eot?#iefix") format("embedded-opentype"),
+		url("fonts-downloaded/BauerBodoniStd-Roman.woff") format("woff"),
+		url("fonts-downloaded/BauerBodoniStd-Roman.ttf") format("truetype"),
+		url("fonts-downloaded/BauerBodoniStd-Roman.svg#509f19215795a5dca2ef4c306eef830a") format("svg");
+		font-weight:normal;
+		font-style:normal;
+		}
+
+	@font-face	{
+		font-family:"bauer-bodoni-std-bolditalic";
+		src:url("fonts-downloaded/BauerBodoniStd-BoldItalic.eot");
+		src:url("fonts-downloaded/BauerBodoniStd-BoldItalic.eot?#iefix") format("embedded-opentype"),
+		url("fonts-downloaded/BauerBodoniStd-BoldItalic.woff") format("woff"),
+		url("fonts-downloaded/BauerBodoniStd-BoldItalic.ttf") format("truetype"),
+		url("fonts-downloaded/BauerBodoniStd-BoldItalic.svg#4608327e51677f0f16345bfb21edc3eb") format("svg");
+		font-weight:normal;
+		font-style:normal;
+		}
+  .centertxt {
+  	margin-top: 50px;
+  }
+  #section1 {
+  	background: url('images/section1.png');
+  	background-size: cover;
+  }
+  #section1 h1 , #section2 h1 , #section3 h1 , #section4 h1 , #section5 h1{
+  	margin-top: 100px;
+  	font-family:'bauer-bodoni-std-bolditalic', serif; 
+  	/*font-family:'bauer-bodoni-std-roman';*/ /*7elw da*/
+	text-transform: none;
+  }
+  #section1 h3 , #section2 h3 , #section3 h3 , #section4 h3 , #section5 h3{
+  	margin-bottom: 50px;
+  }
+
+  #section2 {
+  	background: url('images/section2.png');
+  	background-size: cover;
+  }
+  #section3 {
+  	background: url('images/section3.png');
+  	background-size: cover;
+  }
+  #section4 {
+  	background: url('images/section4.png');
+  	background-size: cover;
+  }
+  #section5 {
+  	background: url('images/section5.png');
+  	background-size: cover;
+  }
+
+	.fsvs {
+	  height: 100%;
+	  width: 100%;
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	}
+  .fsvs #fsvs-body {
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%; 
+	}
+    .fsvs #fsvs-body > .slide {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      -webkit-backface-visibility: hidden;
+      -webkit-perspective: 1000; 
+   }
+
+</style>
+<style>
+
+
+
+p {
+  margin: 40px auto;
+  text-align: center;
+  font-family: helvetica neue,helvetica,arial,sans-serif;
+  font-weight: 200;
+}
+
+.icon {
+  margin: 0 auto;
+  height: 50px;
+  width: 70px;
+  cursor: pointer;
+}
+
+/* Hamburger two */
+
+#trigger-overlay:before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  background: transparent;
+  top: -23px;
+  left: -5px;
+  border-radius: 100%;
+}
+
+
+#trigger-overlay span {
+  display: block;
+  width: 70%;
+  height: 7px;
+  left: 15%;
+  background: white;
+  position: absolute;
+}
+
+#trigger-overlay span:nth-of-type(1) {
+  top: 0px;
+  left: auto;
+  right: 15%;
+}
+
+#trigger-overlay span:nth-of-type(2) {
+  top: 14px;
+}
+
+#trigger-overlay span:nth-of-type(2):before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  width: 100%;
+  height: 100%;
+}
+
+#trigger-overlay span:nth-of-type(3) {
+  top: 28px;
+  left: 15%;
+}
+
+
+#trigger-overlay.active span:nth-of-type(1), #trigger-overlay.active span:nth-of-type(3) {
+  width: 0%;
+}
+
+#trigger-overlay.active span:nth-of-type(2) {
+  transform: rotate(45deg);
+  background: #0986bf;
+}
+
+#trigger-overlay.active span:nth-of-type(2):before {
+  transform: rotate(90deg);
+  background: #0986bf;
+}
+
+</style>
+  </head>
+  <body>
+	  	<div class="loader-wrapper">
+	  		<div class="loader">
+	  			<div id='loadercontainer'>
+				  <div class='dots'></div>
+				  <div class='dots'></div>
+				  <div class='dots'></div>
+				  <div class='dots'></div>
+				  <div class='dots'></div>
+				  <div class='dots'></div>
+				  <div class='dots'></div>
+				  <div class='dots'></div>
+				  <div class='dots'></div>
+				  <div class='dots'></div>
+				</div>
+			</div>
+	  		<div class="loader-section left"></div>
+	  		<div class="loader-section right"></div>
+    	</div>
+
+			<div id="trigger-overlay"  class="icon toggle">
+			  <span></span>
+			  <span></span>
+			  <span></span>
+			</div>
+		<video autoplay loop poster="polina.jpg" id="bgvid" class="grayscale">
+			<source src="assets/video.webm" type="video/webm">
+			<source src="assets/video.mp4" type="video/mp4">
+		</video>
+		<div id="fsvs-body">
+					<section class="slide">
+						<div class="nav-in">
+							<h1 class="logo"><a href="#two" title="700apps - Leading Innovators">700apps</a></h1>
+					    </div>	<!-- nav-in -->
+				    	<div class="clearfix"></div>
+						<div class="cd-intro">
+							<h2 class="cd-headline slide">
+							  <span>We</span>
+							  <span class="cd-words-wrapper">
+							    <b class="is-visible">think</b>
+							    <b>create</b>
+							    <b>innovate</b>
+							    <b>deliver</b>
+							  </span>
+							</h2>
+						</div>	<!-- cd-intro -->				
+						<a href="#section1" class="mouse animated fadeInUp"><div class="scroll"></div></a>
+					</section>
+					<div class="container slide" id="section1">
+						<div class="clearfix"></div>
+						<section class="about_us">
+							<h1>What we do</h1>
+							<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, aspernatur quia mollitia odit tempora voluptate amet incidunt molestias consequuntur unde blanditiis tenetur non veniam, error, quisquam assumenda repellendus sed aliquam!</h3>
+							<div class="row">
+							</div>
+							<div class="col-xs-12">
+									<div class="col-md-3 col-sm-6 col-xs-12">
+										<span class="pe-7s-album" style="font-size: 64px;"></span>
+										<h2>IDEA</h2>
+										<div class="row">
+											<p>We compile valuable data using your Startup Questionnaire and our own research, to fully understand your vision, industry and demographics. We then create detailed wireframes and share our ideas with you.</p>
+											<div class="row">
+												<div href="#" class="btn-animate morph-button morph-button-overlay morph-button-fixed">
+												  <svg>
+												    <rect class="shape" height="50" width="200" />
+												  </svg>
+												  <button>LEARN MORE</button>
+												</div>	<!-- button -->
+											</div>
+										</div>	
+									</div>
+									<div class="col-md-3 col-sm-6 col-xs-12">
+									<span class="pe-7s-back-2" style="font-size: 64px;"></span>
+									<h2>DESIGN</h2>
+									<div class="row">
+										<p>We hand craft various design sets from scratch, focusing on creating a look-and-feel to fit your brand and speak to your visitors. We present, revise and collaborate with you until we finalize the design.</p>
+										<div class="row">
+											<div href="#" class="btn-animate ripple morph-button morph-button2 morph-button-overlay morph-button-fixed">
+											  <svg>
+											    <rect class="shape" height="50" width="200" />
+											  </svg>
+											  <button>LEARN MORE</button>
+											</div>	<!-- button -->
+										</div>
+									</div>
+									</div>
+									<div class="col-md-3 col-sm-6 col-xs-12">
+										<span class="pe-7s-tools" style="font-size: 64px;"></span>
+										<h2>CODE</h2>
+										<div class="row">
+											<p>We code and develop your site using powerful technology and advanced backend management software. We turn our designs into a functioning website, and program the various functionalities that make your website come to life.</p>
+											<div class="row">
+												<div href="#" class="btn-animate ripple morph-button morph-button-overlay morph-button-fixed">
+												  <svg>
+												    <rect class="shape" height="50" width="200" />
+												  </svg>
+												  <button>LEARN MORE</button>
+												</div>	<!-- button -->
+											</div>
+										</div>	
+									</div>
+									<div class="col-md-3 col-sm-6 col-xs-12">
+									<span class="pe-7s-graph1" style="font-size: 64px;"></span>
+									<h2>ACTION</h2>
+									<div class="row">
+										<p>We carefully inspect the site, including extensive mobile and responsive testing. To ensure a smooth transition post-launch, we provide training, tutorials and 60 days of technical support.</p>
+										<div class="row">
+											<div href="#" class="btn-animate ripple morph-button morph-button-overlay morph-button-fixed">
+											  <svg>
+											    <rect class="shape" height="50" width="200" />
+											  </svg>
+											  <button>LEARN MORE</button>
+											</div>	<!-- button -->
+										</div>
+									</div>
+									</div>
+							</div>
+						</section>
+					</div>	<!-- container -->
+					<div class="container slide" id="section2">
+						<div class="clearfix"></div>
+						<section >
+							<h1>Skills</h1>
+							<h3>
+								we're experienced and passionate user interface designers with interaction design background.
+								Our goal is to make the world wide web a better place by designing beautiful user experiences, one site at a time.
+							</h3>
+							<div class="col-sm-12">
+								<div class="row">
+									<div class="chart" data-percent="93" data-bar-color="#fd685b" data-animate="2000">	
+										<div class="chart-content">
+											<div class="percent"></div>
+											<div class="chart-title">iOS Applications</div>
+										</div><!-- chart-content -->	
+									</div>
+									<div class="chart" data-percent="90" data-bar-color="#a0d468" data-animate="3000">
+										<div class="chart-content">
+											<div class="percent"></div>
+											<div class="chart-title">Android Applications</div>
+										</div><!-- chart-content -->
+									</div>
+									<div class="chart" data-percent="87" data-bar-color="#ac92ec" data-animate="3500">
+										<div class="chart-content">
+											<div class="percent"></div>
+											<div class="chart-title">Windows Phone Applications</div>
+										</div><!-- chart-content -->
+									</div>
+									<div class="chart" data-percent="80" data-bar-color="#ac02ec" data-animate="3500">
+										<div class="chart-content">
+											<div class="percent"></div>
+											<div class="chart-title">BlackBerry Applications</div>
+										</div><!-- chart-content -->
+									</div>
+									<div class="chart" data-percent="85" data-bar-color="#ac839c" data-animate="3500">
+										<div class="chart-content">
+											<div class="percent"></div>
+											<div class="chart-title">Windows8 Applications</div>
+										</div><!-- chart-content -->
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>	<!-- container -->
+					<div class="container slide" id="section3">
+						<div class="clearfix"></div>
+						<section>
+							<h1>Projects</h1>
+							<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus deserunt quo at nisi velit praesentium harum iure deleniti autem, sapiente maxime numquam explicabo asperiores voluptas nesciunt, unde quaerat necessitatibus consequatur?</h3>
+							<div class="col-sm-12">
+								<div class="row-content buffer even clear-after">
+									<div class="col-sm-3 col-xs-6">
+										<div class="count-item">
+											<span class="pe-7s-graph1" style="font-size: 64px;"></span>
+											<div class="count-number" data-from="0" data-to="128" data-speed="1000" data-refresh-interval="25"></div>
+											<div class="count-subject">iOS Applications</div>
+										</div><!-- count-item -->
+									</div>
+									<div class="col-sm-3 col-xs-6">
+										<div class="count-item">
+											<span class="pe-7s-medal" style="font-size: 64px;"></span>
+											<div class="count-number" data-from="0" data-to="903" data-speed="1500" data-refresh-interval="25"></div>
+											<div class="count-subject">Android Applications</div>
+										</div><!-- count-item -->
+									</div>
+									<div class="col-sm-3 col-xs-6">
+										<div class="count-item">
+											<span class="pe-7s-signal" style="font-size: 64px;"></span>
+											<div class="count-number" data-from="0" data-to="26" data-speed="2000" data-refresh-interval="25"></div>
+											<div class="count-subject">Smart TV Applications</div>
+										</div><!-- count-item -->
+									</div>
+									<div class="col-sm-3 col-xs-6">
+										<div class="count-item">
+											<span class="pe-7s-refresh-cloud" style="font-size: 64px;"></span>
+											<div class="count-number" data-from="0" data-to="629802" data-speed="2500" data-refresh-interval="25"></div>
+											<div class="count-subject">Lines of Code</div>
+										</div><!-- count-item -->
+									</div>
+								</div>	
+							</div>
+						</section>
+						<div class="clearfix"></div>
+					</div>
+					<div class="container slide" id="section4">
+						<div class="clearfix"></div>
+							<section>
+								<h1>Snapshots</h1>
+								<div class="row">
+									<div class="col-lg-6">
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+										<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+									</div>						
+									<div class="col-lg-6 side-mockup left-mockup animation">
+										<div class="slider iphone-slider black" data-autoplay="3000">
+											<figure>
+												<div><img src="images/00Splash.jpg" alt=""></div>
+												<div><img src="images/01Login.jpg" alt=""></div>
+												<div><img src="images/09SetCreditAlert.jpg" alt=""></div>
+												<div><img src="images/10Prepaid_Recharge_Voucher.jpg" alt=""></div>
+											</figure>
+										</div>
+									</div>						
+								</div>	
+							</section>
+					</div>
+					<div class="container slide" id="section4">
+						<div class="clearfix"></div>
+							<section>
+								<h1>Snapshots</h1>
+								<div class="cd-testimonials-wrapper cd-container">
+	<ul class="cd-testimonials">
+		<li>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			<div class="cd-author">
+				<img src="imgs/avatar-1.jpg" alt="Author image">
+				<ul class="cd-author-info">
+					<li>MyName</li>
+					<li>CEO, AmberCreative</li>
+				</ul>
+			</div>
+		</li>
+
+		<li>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ea, perferendis error repudiandae numquam dolor fuga temporibus. Unde omnis, consequuntur.</p>
+			<div class="cd-author">
+				<img src="imgs/avatar-2.jpg" alt="Author image">
+				<ul class="cd-author-info">
+					<li>MyName</li>
+					<li>Designer, CodyHouse</li>
+				</ul>
+			</div>
+		</li>
+
+		<li>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam totam nulla est, illo molestiae maxime officiis, quae ad, ipsum vitae deserunt molestias eius alias.</p>
+			<div class="cd-author">
+				<img src="imgs/avatar-3.jpg" alt="Author image">
+				<ul class="cd-author-info">
+					<li>MyName</li>
+					<li>CEO, CompanyName</li>
+				</ul>
+			</div>
+		</li>
+		
+	</ul> <!-- cd-testimonials -->
+
+	<a href="#0" class="cd-see-all"><div href="#" class="btn-animate morph-button morph-button-overlay morph-button-fixed">
+												  <svg>
+												    <rect class="shape" height="50" width="200" />
+												  </svg>
+												  <button>SEE ALL</button>
+												</div>	<!-- button --></a>
+													
+</div> <!-- cd-testimonials-wrapper -->
+
+							</section>
+					</div>
+
+					<div class="container slide">
+						<div class="clearfix"></div>
+						<footer role="contentinfo">
+						<div class="row">
+							<div class="col-xs-12">
+								<section id="top-footer">
+					<div class="welcome">
+					
+					    <h1 class="fade">sign up for 700apps news letter</h1>
+					    <button type="button" class="fade show btn">Sign up form</button>
+					  </div>
+					<div id="form">
+					  <h2>
+					    FEED ME YOUR EMAIL !
+					  </h2>
+					  <form>
+					     <input type="text" placeholder="Your Email">
+					     <input type="submit">
+					   </form>
+					  <button class="btn close"></button>
+					</div>
+									<div class="widget col-sm-3"><!-- la class="widget" è forse generata utomaticamente da wp -->
+										<h4>Sitemap</h4>
+										<ul class="plain">
+											<li><a href="#">Home</a></li>
+											<li><a href="#">Portfolio</a></li>
+											<li><a href="#">Blog</a></li>
+											<li><a href="#">Resume</a></li>
+											<li><a href="#">Contact</a></li>
+										</ul>
+									</div>
+									<div class="widget col-sm-3">
+										<h4>Events</h4>
+										<ul class="plain">
+											<li><a href="#">March 2014</a></li>
+											<li><a href="#">April 2014</a></li>
+											<li><a href="#">May 2014</a></li>
+											<li><a href="#">June 2014</a></li>
+											<li><a href="#">July 2014</a></li>
+										</ul>
+									</div>								
+									<div class="widget col-sm-3">
+										<h4>News</h4>
+										<ul class="plain">
+											<li><a href="#">March 2014</a></li>
+											<li><a href="#">April 2014</a></li>
+											<li><a href="#">May 2014</a></li>
+											<li><a href="#">June 2014</a></li>
+											<li><a href="#">July 2014</a></li>
+										</ul>
+									</div>				
+									<div class="widget meta-social col-xs-3">
+										<h4>Follow Us</h4>
+										<ul>
+											<li><a href="#" class="twitter-share border-box"><i class="fa fa-twitter fa-lg"></i></a></li>
+											<li><a href="#" class="facebook-share border-box"><i class="fa fa-facebook fa-lg"></i></a></li>
+											<li><a href="#" class="pinterest-share border-box"><i class="fa fa-pinterest fa-lg"></i></a></li>
+											<li><a href="#" class="instagram-share border-box"><i class="fa fa-instagram fa-lg"></i></a></li>
+											<li><a href="#" class="linkedin-share border-box"><i class="fa fa-linkedin fa-lg"></i></a></li>
+											<li><a href="#" class="google-plus-share border-box"><i class="fa fa-google-plus fa-lg"></i></a></li>
+										</ul>
+									</div>														
+								</section><!-- top-footer -->
+								<div class="clearfix"></div>
+								<section id="bottom-footer">
+			
+									<p class="keep-left">&copy; 2015 <a href="http://700apps.com/" alt="700apps">700apps</a>. All Rights Reserved.</p>
+									<p class="keep-right">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+								</section><!-- bottom-footer -->			
+							</div><!-- row-content -->	
+						</div><!-- row -->	
+						<div class="clearfix"></div>
+					</footer>
+					<div class="slide"></div>
+					</div>
+			    </div>
+			    					<div class="overlay overlay-hugeinc">
+						<button type="button" class="overlay-close">Close</button>
+						<nav>
+							<ul>
+								<li><a href="." class="active">Home</a></li>
+								<li><a href=".">About</a></li>
+								<li><a href=".">Clients</a></li>
+								<li><a href=".">Careers</a></li>
+								<li><a href=".">Services</a></li>
+								<li><a href=".">Projects</a></li>
+								<li><a href=".">Contact us</a></li>
+							</ul>
+						</nav>
+					</div>	<!-- overlay overlay-hugeinc -->
+					
+<div class="cd-testimonials-all">
+	<div class="cd-testimonials-all-wrapper">
+		<ul>
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit totam saepe iste maiores neque animi molestias nihil illum nisi temporibus.</p>
+				
+				<div class="cd-author">
+					<img src="imgs/avatar-1.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore nostrum nisi, doloremque error hic nam nemo doloribus porro impedit perferendis. Tempora, distinctio hic suscipit. At ullam eaque atque recusandae modi fugiat voluptatem laborum laboriosam rerum, consequatur reprehenderit omnis, enim pariatur nam, quidem, quas vel reiciendis aspernatur consequuntur. Commodi quasi enim, nisi alias fugit architecto, doloremque, eligendi quam autem exercitationem consectetur.</p>
+				
+				<div class="cd-author">
+					<img src="imgs/avatar-2.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem quibusdam eveniet, molestiae laborum voluptatibus minima hic quasi accusamus ut facere, eius expedita, voluptatem? Repellat incidunt veniam quaerat, qui laboriosam dicta. Quidem ducimus laudantium dolorum enim qui at ipsum, a error.</p>
+				
+				<div class="cd-author">
+					<img src="imgs/avatar-3.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero voluptates officiis tempore quae officia! Beatae quia deleniti cum corporis eos perferendis libero reiciendis nemo iusto accusamus, debitis tempora voluptas praesentium repudiandae laboriosam excepturi laborum, nisi optio repellat explicabo, incidunt ex numquam. Ullam perferendis officiis harum doloribus quae corrupti minima quia, aliquam nostrum expedita pariatur maxime repellat, voluptas sunt unde, inventore.</p>
+				
+				<div class="cd-author">
+					<img src="imgs/avatar-4.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit totam saepe iste maiores neque animi molestias nihil illum nisi temporibus.</p>
+				
+				<div class="cd-author">
+					<img src="imgs/avatar-5.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis quia quas, quis illo adipisci voluptate ex harum iste commodi nulla dolor. Eius ratione quod ab!</p>
+				
+				<div class="cd-author">
+					<img src="imgs/avatar-6.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, dignissimos iure rem fugiat consequuntur officiis.</p>
+				
+				<div class="cd-author">
+					<img src="imgs/avatar-1.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At temporibus tempora necessitatibus reiciendis provident deserunt maxime sit id. Dicta aut voluptatibus placeat quibusdam vel, dolore.</p>
+				
+				<div class="cd-author">
+					<img src="imgs/avatar-2.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis iusto sapiente, excepturi velit, beatae possimus est tenetur cumque fugit tempore dolore fugiat! Recusandae, vel suscipit? Perspiciatis non similique sint suscipit officia illo, accusamus dolorum, voluptate vitae quia ea amet optio magni voluptatem nemo, natus nihil.</p>
+				
+				<div class="cd-author">
+					<img src="imgs/avatar-3.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor quasi officiis pariatur, fugit minus omnis animi ut assumenda quod commodi, ad a alias maxime unde suscipit magnam, voluptas laboriosam ipsam quibusdam quidem, dolorem deleniti id.</p>
+				
+				<div class="cd-author">
+					<img src="imgs/avatar-4.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At temporibus tempora necessitatibus reiciendis provident deserunt maxime sit id. Dicta aut voluptatibus placeat quibusdam vel, dolore.</p>
+				
+				<div class="cd-author">
+					<img src="imgs/avatar-5.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+
+			<li class="cd-testimonials-item">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque tempore ipsam, eos suscipit nostrum molestias reprehenderit, rerum amet cum similique a, ipsum soluta delectus explicabo nihil repellat incidunt! Minima magni possimus mollitia deserunt facere, tempore earum modi, ea ipsa dicta temporibus suscipit quidem ut quibusdam vero voluptatibus nostrum excepturi explicabo nulla harum, molestiae alias. Ab, quidem rem fugit delectus quod.</p>
+				
+				<div class="cd-author">
+					<img src="imgs/avatar-6.jpg" alt="Author image">
+					<ul class="cd-author-info">
+						<li>MyName</li>
+						<li>CEO, CompanyName</li>
+					</ul>
+				</div> <!-- cd-author -->
+			</li>
+		</ul>
+	</div>	<!-- cd-testimonials-all-wrapper -->
+
+	<a href="#0" class="close-btn">Close</a>
+</div> <!-- cd-testimonials-all -->
+        <script>
+        jQuery(document).ready(function($){
+            var slider = $.fn.fsvs({
+                speed               : 1000,
+                bodyID              : 'fsvs-body',
+                selector            : '> .slide',
+                mouseSwipeDisance   : 40,
+                afterSlide          : function(){},
+                beforeSlide         : function(){},
+                endSlide            : function(){},
+                mouseWheelEvents    : true,
+                mouseWheelDelay     : false,
+                mouseDragEvents     : true,
+                touchEvents         : true,
+                arrowKeyEvents      : true,
+                pagination          : false,
+                nthClasses          : false,
+                detectHash          : true
+            });
+        });
+        </script>
+	 <script src="javascripts/jquery.flexslider-min.js"></script>
+ <script src="javascripts/masonry.pkgd.min.js"></script>
+ <script src="javascripts/main.js"></script>
+	<script src="javascripts/classie.js"></script>
+	<script src="javascripts/uiMorphingButton_inflow.js"></script>
+	<script src="javascripts/uiMorphingButton_fixed.js"></script>
+    <script src='javascripts/plugins.js'></script>
+    <script src='javascripts/script.js'></script>
+    <!--[if lt IE 7]>
+    <script src='http://ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js'></script>
+    <script>
+      window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})});
+    </script>
+    <![endif]-->
+	<script>
+		$('.icon').click(function(){
+		  $(this).toggleClass('active');
+		})
+		$(window).load(function() {
+			setTimeout(function(){
+			$('body').addClass('loaded');
+			}, 100);
+		});
+	</script>
+  </body>
+</html>

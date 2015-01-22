@@ -109,22 +109,10 @@ nav a:hover:after, .active a:after {
 		}
 	}
 }
+
 .overlay-hugeinc.close nav ul {
 	@include transform (translateY(25%));
 	@include transform (rotateX(-35deg));
-}
-.toggle span {
-  display: block;
-  background: white;
-  width: 60px;
-  height: 2px;
-
-}
-.toggle  span:nth-child(1) {
-  margin-bottom: 10px;
-}
-.toggle  span:nth-child(3) {
-  margin-top: 10px;
 }
 .toggle {
   position: absolute;
